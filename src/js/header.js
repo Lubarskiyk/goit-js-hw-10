@@ -1,7 +1,8 @@
 let a = document.querySelectorAll('.nav-item');
 a.forEach(el => {
-  const hreflink = '/' + el.firstElementChild.getAttribute('href');
+  const hreflink = el.firstElementChild.getAttribute('href');
   console.log(hreflink);
+  console.dir(window.location);
   console.log(window.location.pathname);
   console.log(el.firstElementChild.getAttribute('href'));
   if (hreflink === window.location.pathname) {
