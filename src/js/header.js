@@ -1,9 +1,7 @@
 let a = document.querySelectorAll('.nav-item');
 a.forEach(el => {
-  if (
-    '/' + el.firstElementChild.getAttribute('href') ===
-    window.location.pathname
-  ) {
+  const hreflink = '/' + el.firstElementChild.getAttribute('href');
+  if (hreflink === window.location.pathname) {
     el.classList.add('nav-item-active');
   }
 });
