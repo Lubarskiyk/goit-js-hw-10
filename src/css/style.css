@@ -1,0 +1,31 @@
+@import url('../../node_modules/modern-normalize/modern-normalize.css');
+@import url('./null.css');
+@import url('./base.css');
+@import url('./header.css');
+#app {
+  max-width: 1440px;
+  min-height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10vh;
+}
+.home-title {
+  font-size: 72px;
+}
+.home-ul {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 320px;
+  gap: 40px;
+}
+.home-img {
+  transition: transform 250ms ease-in-out;
+}
+.home-link:hover > .home-img {
+  transform: scale(1.05);
+}
