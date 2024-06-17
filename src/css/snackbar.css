@@ -2,3 +2,45 @@
 @import url('./null.css');
 @import url('./base.css');
 @import url('./header.css');
+
+.form {
+  color: rgb(var(--fo-fg));
+  max-width: 320px;
+}
+
+.counter {
+  margin: 6px auto 10px;
+
+  max-width: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.timer-input {
+  margin: 0;
+  max-width: 220px;
+}
+.counter-button {
+  width: 39px;
+  height: 39px;
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid rgb(var(--fo-fg));
+}
+
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  opacity: 0;
+  margin: 0;
+}
+
+.fieldset {
+  margin: 0 auto 16px;
+  border: 1px solid rgb(var(--fo-fg));
+  max-width: 320px;
+}
+
+.button-start {
+  margin: 0 auto;
+}

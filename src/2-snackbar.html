@@ -13,13 +13,24 @@
       <form class="form">
         <label>
           Delay (ms)
-          <input class="timer-input" type="number" name="delay" required />
+          <div class="counter">
+            <button class="counter-button" type="button">-</button>
+            <input
+              class="timer-input"
+              type="number"
+              name="delay"
+              min="0"
+              required
+            />
+            <button class="counter-button" type="button">+</button>
+          </div>
         </label>
 
-        <fieldset>
+        <fieldset class="fieldset">
           <legend>State</legend>
           <label>
             <input type="radio" name="state" value="fulfilled" required />
+
             Fulfilled
           </label>
           <label>

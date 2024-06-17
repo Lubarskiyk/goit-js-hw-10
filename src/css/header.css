@@ -4,7 +4,6 @@
 .nav-list {
   display: grid;
   align-items: flex-start;
-
   position: relative;
   padding: 0 2rem;
 }
