@@ -15,6 +15,10 @@
   text-align: center;
   max-width: 320px;
 }
+.timer-input:disabled {
+  background-color: rgba(var(--fo-bg), 0.2);
+  color: rgba(var(--fo-fg), 0.2);
+}
 
 .timer-input::placeholder {
   color: rgb(var(--fo-fg));
@@ -28,13 +32,23 @@
   text-transform: uppercase;
   user-select: none;
   appearance: none;
-  cursor: pointer;
+  cursor: none;
   font-weight: 700;
   background-color: rgb(var(--fo-fg), 0.7);
   padding: 0.25rem;
   transition: background-color 0.1s;
 }
-.button-start:hover {
+
+.button-start:disabled {
+  background-color: rgb(var(--fo-bg), 0.2);
+  color: rgba(var(--fo-fg), 0.2);
+}
+
+.button-start:not([disabled]) {
+  cursor: pointer;
+}
+
+.button-start:not([disabled]):hover {
   background-color: rgb(var(--fo-fg), 1);
 }
 .timer {

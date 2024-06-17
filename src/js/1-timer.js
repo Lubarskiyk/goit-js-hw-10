@@ -25,10 +25,31 @@ iziToast.settings({
   backgroundColor: 'rgba(26, 255, 128, 0.8)',
 });
 
-const days = document.querySelector('[data-days]');
-const hours = document.querySelector('[data-hours]');
-const minutes = document.querySelector('[data-minutes]');
-const seconds = document.querySelector('[data-seconds]');
+const timerEl = {
+  daysEl: document.querySelector('[data-days]'),
+  hoursEl: document.querySelector('[data-hours]'),
+  minutesEl: document.querySelector('[data-minutes]'),
+  secondsEl: document.querySelector('[data-seconds]'),
+
+  clearTimer() {
+    this.daysEl.textContent = 'XX';
+    this.hoursEl.textContent = 'XX';
+    this.minutesEl.textContent = 'XX';
+    this.secondsEl.textContent = 'XX';
+  },
+  setTimer(timernew) {
+    this.daysEl.textContent = timernew.days.padStart(2, '0');
+    this.hoursEl.textContent = timernew.hours.padStart(2, '0');
+    this.minutesEl.textContent = timernew.minutes.padStart(2, '0');
+    this.secondsEl.textContent = timernew.seconds.padStart(2, '0');
+  },
+};
+
+const inputDateEl = document.querySelector('#datetime-picker');
+const buttonStartEl = document.querySelector('.button-start');
+
+buttonStartEl.disabled = true;
+timerEl.clearTimer();
 
 flatpickr('#datetime-picker', options);
 
@@ -42,18 +63,27 @@ function ckeckDate(userDate) {
       title: 'Error',
       message: 'Please choose a date in the future',
     });
-  } else MyTimer = setInterval(setTimer, 1000);
+  } else activatedButtom();
 }
 
-function setTimer() {
-  const timernew = convertMs(totalms);
-  days.textContent = timernew.days.padStart(2, '0');
-  hours.textContent = timernew.hours.padStart(2, '0');
-  minutes.textContent = timernew.minutes.padStart(2, '0');
-  seconds.textContent = timernew.seconds.padStart(2, '0');
+function activatedButtom() {
+  inputDateEl.disabled = true;
+  buttonStartEl.disabled = false;
+  buttonStartEl.addEventListener('click', hanlerButtomStart);
+}
+
+function hanlerButtomStart() {
+  buttonStartEl.disabled = true;
+  MyTimer = setInterval(startTimer, 1000);
+}
+
+function startTimer() {
+  timerEl.setTimer(convertMs(totalms));
   if (totalms >= 1000) {
     totalms -= 1000;
   } else {
+    timerEl.clearTimer();
+    inputDateEl.disabled = !inputDateEl.disabled;
     clearInterval(MyTimer);
   }
 }
