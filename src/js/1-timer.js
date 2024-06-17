@@ -15,7 +15,7 @@ const options = {
 };
 
 iziToast.settings({
-  timeout: 3000,
+  timeout: 2500,
   resetOnHover: true,
   transitionIn: 'flipInX',
   transitionOut: 'flipOutX',
