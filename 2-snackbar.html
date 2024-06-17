@@ -6,10 +6,10 @@
     <link rel="icon" href="/goit-js-hw-10/favicon.ico" />
     <title>PROMISES</title>
     <script type="module" crossorigin src="/goit-js-hw-10/commonHelpers2.js"></script>
-    <link rel="modulepreload" crossorigin href="/goit-js-hw-10/assets/header-Grs6xkDG.js">
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-10/assets/header-B_JN8KHj.js">
     <link rel="modulepreload" crossorigin href="/goit-js-hw-10/assets/vendor-BbbuE1sJ.js">
     <link rel="stylesheet" crossorigin href="/goit-js-hw-10/assets/vendor-CZjNVMTf.css">
-    <link rel="stylesheet" crossorigin href="/goit-js-hw-10/assets/2-snackbar-5mz1F00K.css">
+    <link rel="stylesheet" crossorigin href="/goit-js-hw-10/assets/2-snackbar-DwdsSLt7.css">
   </head>
   <body class="bg-body">
     <div class="container">
@@ -32,13 +32,24 @@
       <form class="form">
         <label>
           Delay (ms)
-          <input class="timer-input" type="number" name="delay" required />
+          <div class="counter">
+            <button class="counter-button" type="button">-</button>
+            <input
+              class="timer-input"
+              type="number"
+              name="delay"
+              min="0"
+              required
+            />
+            <button class="counter-button" type="button">+</button>
+          </div>
         </label>
 
-        <fieldset>
+        <fieldset class="fieldset">
           <legend>State</legend>
           <label>
             <input type="radio" name="state" value="fulfilled" required />
+
             Fulfilled
           </label>
           <label>
