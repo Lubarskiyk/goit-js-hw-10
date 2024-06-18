@@ -10,13 +10,12 @@
 *,
 ::after,
 ::before {
-  box-sizing: border-box;
   border-width: 0;
   border-style: solid;
 }
 
 body {
-  font-family: 'Roboto', sans-serif, system-ui;
+  font-family: 'Roboto', sans-serif;
   background-color: rgb(41 37 36);
   height: 100vh;
 }

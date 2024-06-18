@@ -22,7 +22,6 @@ counterButtonEl.addEventListener('click', event => {
   let currentDelay =
     inputDelayEl.value === '' ? 0 : parseInt(inputDelayEl.value);
   if (event.target.textContent === '+') {
-    console.log('+');
     currentDelay += 1;
     inputDelayEl.value = currentDelay;
   } else if (event.target.textContent === '-') {
@@ -34,17 +33,19 @@ counterButtonEl.addEventListener('click', event => {
 function validateForm() {
   const inputIsCheked = document.querySelector('input[name="state"]:checked');
   if (parseInt(inputDelayEl.value) <= 0) {
-    iziToast.error({
+    iziToast.warning({
       title: 'Error',
       message: 'Please enter delay >0',
+      backgroundColor: 'rgba(255, 182, 66, 0.8)',
     });
 
     return;
   }
   if (!inputIsCheked) {
-    iziToast.error({
+    iziToast.warning({
       title: 'Error',
       message: 'Please checked state',
+      backgroundColor: 'rgba(255, 182, 66, 0.8)',
     });
     return;
   }
@@ -79,12 +80,14 @@ function createPromise(delay, state) {
       iziToast.success({
         title: 'OK',
         message: `Fulfilled promise in ${delay}ms`,
+        backgroundColor: 'rgba(26, 255, 128, 0.8)',
       });
     })
     .catch(error => {
       iziToast.error({
         title: 'Error',
         message: `Rejected promise in ${delay}ms`,
+        backgroundColor: 'rgba(213, 27, 27, 0.8)',
       });
     });
 }

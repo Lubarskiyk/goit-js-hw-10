@@ -22,7 +22,7 @@ iziToast.settings({
   position: 'center',
   titleSize: 25,
   messageSize: 25,
-  backgroundColor: 'rgba(26, 255, 128, 0.8)',
+  backgroundColor: 'rgba(255, 182, 66, 0.8)',
 });
 
 const timerEl = {

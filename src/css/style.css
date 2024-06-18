@@ -2,6 +2,7 @@
 @import url('./null.css');
 @import url('./base.css');
 @import url('./header.css');
+
 #app {
   max-width: 1440px;
   min-height: 100vh;
@@ -14,6 +15,7 @@
 }
 .home-title {
   font-size: 72px;
+  color: rgb(var(--fo-fg));
 }
 .home-ul {
   margin: 0 auto;
@@ -25,6 +27,8 @@
 }
 .home-img {
   transition: transform 250ms ease-in-out;
+  border-radius: 10%;
+  aspect-ratio: 400/290;
 }
 .home-link:hover > .home-img {
   transform: scale(1.05);
